@@ -30,15 +30,15 @@ $(document).on("click", ".btn-info", function(){
         })
         .then(function(response){
             console.log(response);
-            console.log(response.data[0].url);
+            console.log(response.data[0].images.original.url);
             //create variable to hold the gif url
-            var gifURL= response.data[0].url;
+            var gifURL= response.data[0].images.original.url;
             //make a new div with the class of card
             var newCard= $("<div>").addClass("card");
                     //make a new link that leads to the gif
             var newGif= $("<img>").attr("src", gifURL);
             newCard.append(newGif)//append our gif into the card
-            $("#gifSection").append(newCard);// append our dynamically created card with a gif to our gif section
+            $("#gifSection").prepend(newCard);// append our dynamically created card with a gif to our gif section
 
     // image_url
     // title
